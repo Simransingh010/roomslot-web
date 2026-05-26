@@ -7,7 +7,7 @@
   --card-foreground: 240 10% 3.9%;
   --popover: 0 0% 100%;
   --popover-foreground: 240 10% 3.9%;
-  --primary: 240 5.9% 10%;
+  --primary: 245 58% 51%;
   --primary-foreground: 0 0% 98%;
   --secondary: 240 4.8% 95.9%;
   --secondary-foreground: 240 5.9% 10%;
@@ -19,7 +19,7 @@
   --destructive-foreground: 0 0% 98%;
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
-  --ring: 240 5.9% 10%;
+  --ring: 245 58% 51%;
   --radius: 0.75rem;
 }
 
@@ -31,7 +31,7 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
+    --primary: 245 58% 62%;
     --primary-foreground: 240 5.9% 10%;
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -43,7 +43,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --ring: 245 58% 62%;
   }
 }
 
@@ -67,13 +67,59 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  
+
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float 6s ease-in-out 2s infinite;
+  --animate-float-slow: float 8s ease-in-out 1s infinite;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+  --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+  --animate-gradient-shift: gradient-shift 8s ease infinite;
+  --animate-slide-in-right: slide-in-right 0.5s ease-out forwards;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @layer base {
@@ -84,5 +130,44 @@
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-mesh {
+    background:
+      radial-gradient(at 27% 37%, hsl(245 58% 51% / 0.08) 0px, transparent 50%),
+      radial-gradient(at 97% 21%, hsl(215 70% 60% / 0.06) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsl(285 60% 55% / 0.05) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, hsl(200 80% 65% / 0.04) 0px, transparent 50%);
+  }
+  .gradient-mesh-hero {
+    background:
+      radial-gradient(at 20% 30%, hsl(245 58% 51% / 0.12) 0px, transparent 60%),
+      radial-gradient(at 80% 20%, hsl(215 70% 60% / 0.10) 0px, transparent 50%),
+      radial-gradient(at 60% 80%, hsl(285 60% 55% / 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 60%, hsl(200 80% 65% / 0.06) 0px, transparent 50%);
+  }
+  .gradient-cta {
+    background: linear-gradient(135deg, hsl(245 58% 51%) 0%, hsl(285 60% 55%) 50%, hsl(215 70% 60%) 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  .glass-card {
+    background: hsl(var(--background) / 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(245 58% 51%), hsl(285 60% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
