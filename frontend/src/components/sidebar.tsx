@@ -165,7 +165,7 @@ export function Sidebar() {
               {/* Sub-menu panel */}
               {hasSubItems && isSubOpen && !isCollapsed && (
                 <div className="pl-11 pr-2 py-1 space-y-1 animate-fade-in">
-                  {item.subItems.map((sub) => {
+                  {item.subItems?.map((sub) => {
                     const isSubActive = pathname === sub.href;
                     return (
                       <Link
