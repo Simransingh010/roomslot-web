@@ -9,27 +9,26 @@ const footerLinks = [
     title: "Platform",
     links: [
       { label: "Find Spaces", href: "/explore" },
-      { label: "List Your Space", href: "#" },
-      { label: "Pricing", href: "#" },
+      { label: "List Your Space", href: "/become-a-host" },
+      { label: "Pricing", href: "/pricing" },
       { label: "Enterprise", href: "#" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Help Center", href: "#" },
+      { label: "FAQ", href: "/faq" },
+      { label: "How It Works", href: "/how-it-works" },
       { label: "Blog", href: "#" },
-      { label: "API Docs", href: "#" },
-      { label: "Status", href: "#" },
     ],
   },
   {
     title: "Company",
     links: [
-      { label: "About Us", href: "#" },
+      { label: "About Us", href: "/about" },
       { label: "Careers", href: "#" },
       { label: "Press Kit", href: "#" },
-      { label: "Contact", href: "#" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {

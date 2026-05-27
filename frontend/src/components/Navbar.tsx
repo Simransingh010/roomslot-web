@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Menu, Sparkles, X } from "lucide-react";
+import { Menu, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -17,9 +17,11 @@ import {
 const navLinks = [
   { label: "Explore Spaces", href: "/explore" },
   { label: "About", href: "/about" },
-  { label: "Become a Host", href: "/#host" },
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "Pricing", href: "/#pricing" },
+  { label: "How It Works", href: "/how-it-works" },
+  { label: "Become a Host", href: "/become-a-host" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -56,12 +58,12 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="group relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors py-1"
+              className="group relative py-1 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground lg:text-sm"
             >
               <span>{link.label}</span>
               <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full rounded-full" />

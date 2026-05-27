@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -89,9 +90,11 @@ export function HostSection() {
             </ul>
 
             <div className="pt-4">
-              <Button size="lg" className="px-8 gap-2 shadow-lg shadow-primary/20">
-                Become a Host
-                <ArrowRight className="h-4 w-4" />
+              <Button size="lg" className="px-8 gap-2 shadow-lg shadow-primary/20" asChild>
+                <Link href="/become-a-host">
+                  Become a Host
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </Button>
             </div>
           </motion.div>
