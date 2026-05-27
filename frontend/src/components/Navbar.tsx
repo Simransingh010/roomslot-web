@@ -115,7 +115,7 @@ export function Navbar() {
                     <Link href="/login">Log in</Link>
                   </Button>
                   <Button variant="secondary" className="w-full" asChild>
-                    <Link href="/signup">Create account</Link>
+                    <Link href="/register">Create account</Link>
                   </Button>
                   <Button className="w-full shadow-md" asChild>
                     <Link href="/explore">Find a Space</Link>
