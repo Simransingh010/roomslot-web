@@ -126,7 +126,7 @@ export default function ContactPage() {
                       placeholder="Tell us what you need"
                     />
                   </label>
-                  <Button type="button" className="w-full sm:w-auto">
+                  <Button type="submit" className="w-full sm:w-auto">
                     Send Message
                     <Send className="h-4 w-4" />
                   </Button>
