@@ -15,10 +15,11 @@ import {
 } from "@/components/ui/sheet";
 
 const navLinks = [
-  { label: "Explore Spaces", href: "#categories" },
-  { label: "Become a Host", href: "#host" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Explore Spaces", href: "/explore" },
+  { label: "About", href: "/about" },
+  { label: "Become a Host", href: "/#host" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Pricing", href: "/#pricing" },
 ];
 
 export function Navbar() {
@@ -73,8 +74,8 @@ export function Navbar() {
           <Button variant="ghost" size="sm" className="hidden sm:inline-flex text-muted-foreground hover:text-foreground">
             Log in
           </Button>
-          <Button size="sm" className="hidden sm:inline-flex shadow-md shadow-primary/20 gap-1.5">
-            Find a Space
+          <Button size="sm" className="hidden sm:inline-flex shadow-md shadow-primary/20 gap-1.5" asChild>
+            <Link href="/explore">Find a Space</Link>
           </Button>
 
           {/* Mobile Toggle */}
@@ -109,7 +110,9 @@ export function Navbar() {
                 <hr className="border-border mt-auto" />
                 <div className="flex flex-col gap-3">
                   <Button variant="outline" className="w-full">Log in</Button>
-                  <Button className="w-full shadow-md">Find a Space</Button>
+                  <Button className="w-full shadow-md" asChild>
+                    <Link href="/explore">Find a Space</Link>
+                  </Button>
                 </div>
               </SheetContent>
             </Sheet>

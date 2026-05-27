@@ -1,6 +1,7 @@
-import "@/lib/polyfill";
+import { CRYPTO_POLYFILL_SCRIPT } from "@/lib/polyfill";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -38,8 +39,21 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-screen flex flex-col">{children}</body>
+      <head>
+        <Script
+          id="crypto-polyfill"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: CRYPTO_POLYFILL_SCRIPT }}
+        />
+      </head>
+      <body
+        className="min-h-screen flex flex-col"
+        suppressHydrationWarning
+      >
+        {children}
+      </body>
     </html>
   );
 }

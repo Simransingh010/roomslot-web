@@ -8,7 +8,7 @@ const footerLinks = [
   {
     title: "Platform",
     links: [
-      { label: "Find Spaces", href: "#" },
+      { label: "Find Spaces", href: "/explore" },
       { label: "List Your Space", href: "#" },
       { label: "Pricing", href: "#" },
       { label: "Enterprise", href: "#" },
