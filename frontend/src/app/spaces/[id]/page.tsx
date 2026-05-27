@@ -169,6 +169,31 @@ const MOCK_RULES = [
   },
 ];
 
+function DumbbellIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="m6.5 6.5 11 11" />
+      <path d="m21 21-1-1" />
+      <path d="m3 3 1 1" />
+      <path d="m18 22 4-4" />
+      <path d="m2 6 4-4" />
+      <path d="m3 10 7-7" />
+      <path d="m14 21 7-7" />
+      <path d="M6.5 12.5 12.5 6.5" />
+      <path d="m11.5 17.5 6-6" />
+    </svg>
+  );
+}
+
 const AMENITY_ICONS: Record<
   string,
   React.ComponentType<{ className?: string }>
@@ -194,31 +219,6 @@ const AMENITY_ICONS: Record<
   Amps: Volume2,
   "Mic System": Volume2,
 };
-
-function DumbbellIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <path d="m6.5 6.5 11 11" />
-      <path d="m21 21-1-1" />
-      <path d="m3 3 1 1" />
-      <path d="m18 22 4-4" />
-      <path d="m2 6 4-4" />
-      <path d="m3 10 7-7" />
-      <path d="m14 21 7-7" />
-      <path d="M6.5 12.5 12.5 6.5" />
-      <path d="m11.5 17.5 6-6" />
-    </svg>
-  );
-}
 
 interface Slot {
   id: string;

@@ -13,6 +13,7 @@ export function Tabs({
   onValueChange,
   defaultValue,
   className,
+  children,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & {
   value?: string;
@@ -34,13 +35,16 @@ export function Tabs({
 
   return (
     <TabsContext.Provider value={{ value: activeValue, onValueChange: handleValueChange }}>
-      <div className={cn("w-full", className)} {...props} />
+      <div className={cn("w-full", className)} {...props}>
+        {children}
+      </div>
     </TabsContext.Provider>
   );
 }
 
 export function TabsList({
   className,
+  children,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
@@ -50,7 +54,9 @@ export function TabsList({
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </div>
   );
 }
 
@@ -82,6 +88,7 @@ export function TabsTrigger({
 export function TabsContent({
   value,
   className,
+  children,
   ...props
 }: React.HTMLAttributes<HTMLDivElement> & { value: string }) {
   const context = React.useContext(TabsContext);
@@ -97,6 +104,8 @@ export function TabsContent({
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </div>
   );
 }

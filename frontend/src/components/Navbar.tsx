@@ -73,8 +73,8 @@ export function Navbar() {
 
         {/* Right Controls */}
         <div className="flex items-center gap-3">
-          <Button variant="ghost" size="sm" className="hidden sm:inline-flex text-muted-foreground hover:text-foreground">
-            Log in
+          <Button variant="ghost" size="sm" className="hidden sm:inline-flex text-muted-foreground hover:text-foreground" asChild>
+            <Link href="/login">Log in</Link>
           </Button>
           <Button size="sm" className="hidden sm:inline-flex shadow-md shadow-primary/20 gap-1.5" asChild>
             <Link href="/explore">Find a Space</Link>
@@ -111,7 +111,12 @@ export function Navbar() {
                 </nav>
                 <hr className="border-border mt-auto" />
                 <div className="flex flex-col gap-3">
-                  <Button variant="outline" className="w-full">Log in</Button>
+                  <Button variant="outline" className="w-full" asChild>
+                    <Link href="/login">Log in</Link>
+                  </Button>
+                  <Button variant="secondary" className="w-full" asChild>
+                    <Link href="/signup">Create account</Link>
+                  </Button>
                   <Button className="w-full shadow-md" asChild>
                     <Link href="/explore">Find a Space</Link>
                   </Button>
